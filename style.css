@@ -1,3 +1,16 @@
 h1{
- color: blue;   
+    font-size: medium;
+    text-align: center;
+    
+}
+
+p{
+    background-color: blueviolet;
+    font-family: "Oswald", sans-serif;
+    line-height: normal;
+}
+
+footer{
+    background-color: pink;
+    font-weight: 100;
 }
