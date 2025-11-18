@@ -5,7 +5,7 @@ h1{
 }
 
 p{
-    background-color: blueviolet;
+    *background-color: blueviolet;
     font-family: "Oswald", sans-serif;
     line-height: normal;
 }
@@ -13,4 +13,32 @@ p{
 footer{
     background-color: pink;
     font-weight: 100;
+}
+
+.box{
+    width: 400px;
+    height: 400px;
+    background-color: lightseagreen;
+    border: 2px solid black;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    margin: auto;
+    transition: all 3s linear ;
+}
+
+.box:hover{
+    transform: rotate(360deg);
+}
+
+.para{
+    font-size: 36px;
+}
+
+.container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
