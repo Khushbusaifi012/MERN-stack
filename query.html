@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .box{
+            height: 400px;
+            width: 400px;
+            background-color: lightskyblue;
+            border: 3px solid black;
+            text-align: center;
+        }
+
+        @media(min-width:300px)and (max-width: 600px) {
+            .box{
+                background-color: green;
+            }
+        }
+    
+        .container{
+            border: 3px solid black;
+            background-color: bisque;
+            display: flex;
+            flex-direction: row;
+            width: 450px;
+        }
+
+        #box1{
+            background-color: aquamarine;
+            border: 3px solid blue;
+            width: 47%;
+            margin: 3px;
+            padding: 2px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #box2{
+            background-color: coral;
+            border: 3px solid yellow;
+            width: 47%;
+            margin: 3px;
+            padding: 2px;
+            display: block;
+        }
+        
+
+        p{
+            border: 3px solid red;
+        }
+
+        img{
+            width: 170px;
+        }
+
+        @media(max-width: 1000px) {
+            .container{
+                flex-direction: column;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        Hello, World!
+    </div>
+
+    <div class="container">
+        <div id="box1">
+            <p>text1</p>
+            <p>text2</p>
+        </div>
+
+        <div id="box2">
+           <img src="applogo.png">
+        </div>
+    </div>
+    
+</body>
+</html>
