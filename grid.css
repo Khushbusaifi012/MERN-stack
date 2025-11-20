@@ -20,13 +20,12 @@ body{
     grid-template-columns: repeat(3,1fr);
     column-gap: 1rem;background: #556270; 
     background: -webkit-linear-gradient(to right, #FF6B6B, #556270);
-    background: linear-gradient(to right, #FF6B6B, #556270);x`
+    background: linear-gradient(to right, #FF6B6B, #556270);
 }
 
 .item{
     background-color: rgb(94,94,194);
     border: 5px solid black;
-    
 }
 
 .header{
