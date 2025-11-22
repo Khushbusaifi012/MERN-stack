@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3 D transforms</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            height: 100%;
+            width: 100%;
+        }
+
+        .item{
+            height: 250px;
+            width: 250px;
+            background-color: rgb(12, 197, 27);
+            border: 2px solid black;
+            padding: 2rem;
+        }
+
+        .container{
+            background-color: antiquewhite;
+            padding: 5rem;
+            display: flex;
+            gap: 1rem;
+            grid-template-columns: repeat(3,1fr);
+        }
+
+        .rotatex:hover{
+            transform: rotatex(45deg);
+        }
+
+        .rotatey:hover{
+            transform: rotatey(-45deg);
+        }
+
+        .rotatez:hover{
+            transform: rotatez(45deg);
+        }
+
+        .translatex:hover{
+            transform: rotatex(90deg);
+        }
+
+        .translatey:hover{
+            transform: rotatey(-90deg);
+        }
+
+        .scalex:hover{
+            transform: rotatex(-50deg);
+        }
+
+        .scaley:hover{
+            transform: skewy(30deg);
+        }
+
+        .scalez:hover{
+            transform: rotatez(-90deg);
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="item rotatex">RotateX</div>
+        <div class="item rotatey">RotateY</div>
+        <div class="item rotatez">RotateZ</div>
+        <div class="item translatex">TranslateX</div>
+        <div class="item translatey">TranslateY</div>
+        <div class="item scalex">ScaleX</div>
+        <div class="item scaley">ScaleY</div>
+        <div class="item scalez">ScaleZ</div>
+
+    </div>
+
+
+    
+</body>
+</html>
