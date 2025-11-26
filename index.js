@@ -237,3 +237,85 @@ const greet = (bless) => {    //arrow functions
 };
 console.log(greet('Khushbu'));  //output is : hello khushbu"
 
+let obj={
+    'name':'khushbu',
+    'age':21,
+    'weight':50,
+    'height': '6ft inch'
+};
+console.log(obj);
+
+let obj1={
+    n:'khushbu',
+    h:15,
+    w:60,
+    gr:function(){
+        console.log('Hello my name is khushbu');
+    }
+};
+console.log(obj1)
+obj1.gr();
+console.log(typeof(obj1))
+
+let arr1=[12,3,4,7,9]  //creation of array
+let brr=new Array('love',0,1);
+brr.push('khushbu')   //to add the items
+brr.pop();   //to remove the items
+brr.shift();
+brr.unshift();
+brr.push(20);
+brr.push(40);
+brr.push(70);
+brr.splice(1,2,'kunal');  //to remove the items and add acc to yours.
+console.log(arr1);
+console.log(brr);
+console.log(typeof(arr1));
+console.log(typeof(brr));
+console.log(arr1[3]);
+console.log(brr[2]);
+
+let arr=[1,2,3,4]  //map function
+let ansArr=arr.map((num)=>{
+    return num*num
+})
+console.log(ansArr);
+
+let arr2=[10,20,30,40,50,60,99,80,76,22,11];
+let EvenArry=arr2.filter((number)=>{
+    if(number%2==0){   //to find out the even numebr;
+        return true;
+    }
+    else{
+        return false;
+    }
+});
+console.log(EvenArry);
+
+let aRRay=[10,20,30,22,34,5,67,8];
+let ans1=aRRay.reduce((acc,curr)=>{   //reduce function
+    return acc+curr;    
+},0);
+console.log(ans1);
+console.log(aRRay.indexOf(22));
+
+let marry=[10,20,3040,89,90];
+marry.forEach((value,index)=>{
+    console.log("Number: ",value,"Index:",index);
+})
+
+let crr=[10,20,30,40];
+for (let value of crr){
+    console.log(value);
+}
+
+let grr=[10,20,30,40];
+function getSum(grr){
+    let len=grr.length;
+    let sum=0;
+    for (let index=0; index<len; index++){
+        sum=sum+grr[index];
+    }
+    return sum;
+}
+let totalSum=getSum(grr);
+console.log(totalSum);
