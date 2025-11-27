@@ -319,3 +319,59 @@ function getSum(grr){
 }
 let totalSum=getSum(grr);
 console.log(totalSum);
+
+function sayMyName(finalName){
+    console.log(finalName);    //function hoisting
+}
+sayMyName('khushbu');
+
+var age=30;
+console.log(age);  //variable hoisting
+
+function greetMe(gret,fullName){
+    console.log('Hello',fullName);
+    gret();
+}
+function gret(){
+    console.log('Good Morning');
+}
+greetMe(gret,'khushbu');
+
+function solve(n){
+    return function(n){
+        return n*n;
+    }
+}
+let Answer=solve(5);
+let finalAns=Answer(10);
+console.log(finalAns);
+
+const ar=[
+    function(a,b){
+        return a+b;
+    },
+
+    function(a,b){
+        return a-b;
+    },
+
+    function(a,b){
+        return a*b;
+    },
+]
+
+let first=ar[0];
+let Ans=first(10,5);
+console.log(Ans);
+
+var age =14;   //global scope
+
+function sayHello(){
+    var name="Earth";      //local scope    
+    console.log("Hello World",name);
+}
+sayHello();
+
+let marksA=100;
+console.log(marksA);
+
