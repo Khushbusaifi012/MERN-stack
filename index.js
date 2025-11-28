@@ -375,3 +375,111 @@ sayHello();
 let marksA=100;
 console.log(marksA);
 
+class Human{    //class and object
+    age=13;  //public
+    wt=80;  //private
+    ht=180;
+
+walking(){
+    console.log("Human is walking");
+}
+running(){
+    console.log("Human is running");
+}
+}
+let object=new Human();
+console.log(object.age);
+console.log(object.wt);
+console.log(object.ht);
+
+function sayName(myname='saheen'){  //default parameter
+    console.log("My name is",myname);  //argument not provided
+}
+sayName(); //no argument provided
+sayName('khushbu'); //argument provided
+
+console.log(Math.PI);
+console.log(Math.max(10,20,30,40,50,60));
+console.log(Math.min(10,20,30,40,50,60));
+console.log(Math.sqrt(16));
+console.log(Math.round(1.6))
+console.log(Math.floor(4.9))
+console.log(Math.ceil(4.1));
+console.log(Math.random(1));
+console.log(Math.pow(2,2));
+
+let current = new Date();
+console.log(current);
+
+let format={
+    age:12,
+    wt:78,
+    ht:190
+};
+console.log(format);
+format.color="white";
+console.log(format);
+
+let src={  //spread operator
+    age:12,  //shallow copy
+    wt:78,
+    ht:190
+};
+
+// //let dest ={...src};
+// src.age=15;
+// console.log(src);
+// console.log(dest);
+
+// let dest=Object.assign({},src);  //deep copy & assigning new object
+// src.age=20;  //assigning new value to src
+// console.log(src);
+// console.log(dest);  
+
+let dest={};
+//cloning using iteration
+for (let key in src){
+    console.log(key);
+    let newKey=key;
+    let newValue=src[key];
+    //insert newkey and newvalue into dest
+    dest[newKey]=newValue;
+}
+src.age=30;
+console.log(src);
+console.log(dest);
+
+//compile time error;
+// console.log(9;
+
+//runtime error;
+console.log(x);  //reference error
+
+//Handling error using try catch;
+try{
+    console.log(x);
+}
+catch(e){     //catch the error
+    console.log("Error occurred:",e.message);
+}
+
+try{
+    console.log("Start of try block");
+    //reference error
+    console.log(y);
+    console.log("End of try block");
+}
+catch(e){
+    console.log("I am inside catch block");
+    console.log('Your error is here: ',e);
+}
+finally{
+    console.log("I will run everytime .I am inside finally block");
+}
+
+try{
+    console.log(x);
+}
+catch(e){
+    throw new Error("Custom error message: An error occurred in the catch block");  //custom error
+}
