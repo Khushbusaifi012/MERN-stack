@@ -485,3 +485,28 @@ console.log(dest);
 // }
 
 //DOM Manipultation;;Acessing element;;
+function changetext(){
+    let p2=document.getElementById('p2');
+    p2.textContent="Hello khushbu";
+}
+
+let p2=document.getElementById('p2');
+p2.addEventListener('click',changetext);
+
+// p2.removeEventListener('click',changetext);  //to remove event listener
+
+let anchorElement=document.getElementById('fanchor');
+
+anchorElement.addEventListener('click',function(event){
+    event.preventDefault();  //to prevent default behaviour
+    anchorElement.textContent="You clicked me!";
+});
+
+let paras=document.querySelectorAll('p');  //accessing multiple elements
+for (let i=0; i<4; i++){
+    let para=paras[i];
+    para.addEventListener('click',function(){
+        alert("You clicked paragraph: "+(i+1));
+    })
+}
+
