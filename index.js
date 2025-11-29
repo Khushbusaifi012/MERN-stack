@@ -453,33 +453,35 @@ console.log(dest);
 // console.log(9;
 
 //runtime error;
-console.log(x);  //reference error
+// console.log(x);  //reference error
 
 //Handling error using try catch;
-try{
-    console.log(x);
-}
-catch(e){     //catch the error
-    console.log("Error occurred:",e.message);
-}
+// try{
+//     console.log(x);
+// }
+// catch(e){     //catch the error
+//     console.log("Error occurred:",e.message);
+// }
 
-try{
-    console.log("Start of try block");
-    //reference error
-    console.log(y);
-    console.log("End of try block");
-}
-catch(e){
-    console.log("I am inside catch block");
-    console.log('Your error is here: ',e);
-}
-finally{
-    console.log("I will run everytime .I am inside finally block");
-}
+// try{
+//     console.log("Start of try block");
+//     //reference error
+//     console.log(y);
+//     console.log("End of try block");
+// }
+// catch(e){
+//     console.log("I am inside catch block");
+//     console.log('Your error is here: ',e);
+// }
+// finally{
+//     console.log("I will run everytime .I am inside finally block");
+// }
 
-try{
-    console.log(x);
-}
-catch(e){
-    throw new Error("Custom error message: An error occurred in the catch block");  //custom error
-}
+// try{
+//     console.log(x);
+// }
+// catch(e){
+//     throw new Error("Custom error message: An error occurred in the catch block");  //custom error
+// }
+
+//DOM Manipultation;;Acessing element;;
