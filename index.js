@@ -485,31 +485,66 @@ console.log(dest);
 // }
 
 //DOM Manipultation;;Acessing element;;
-function changetext(){
-    let p2=document.getElementById('p2');
-    p2.textContent="Hello khushbu";
+// function changetext(){
+//     let p2=document.getElementById('p2');
+//     p2.textContent="Hello khushbu";
+// }
+
+// let p2=document.getElementById('p2');
+// p2.addEventListener('click',changetext);
+
+// // p2.removeEventListener('click',changetext);  //to remove event listener
+
+// let anchorElement=document.getElementById('fanchor');
+
+// anchorElement.addEventListener('click',function(event){
+//     event.preventDefault();  //to prevent default behaviour
+//     anchorElement.textContent="You clicked me!";
+// });
+
+// let paras=document.querySelectorAll('p');  //accessing multiple elements
+// for (let i=0; i<4; i++){
+//     let para=paras[i];
+//     para.addEventListener('click',function(){
+//         alert("You clicked paragraph: "+(i+1));
+//     })
+// }
+
+//code 1\
+const t1=performance.now();
+
+for (let i=1; i<=20; i++){
+    let para=document.createElement('p');
+    para.textContent=("This is paragraph number "+i + "abc") ;
+    document.body.appendChild(para);
 }
+const t2=performance.now();
+console.log("Time taken to execute code 1: "+(t2-t1)+" milliseconds");    // this is reflow the items
 
-let p2=document.getElementById('p2');
-p2.addEventListener('click',changetext);
 
-// p2.removeEventListener('click',changetext);  //to remove event listener
+//code 2
+const t3=performance.now();
+let mydiv=document.getElementById('wrapper');
 
-let anchorElement=document.getElementById('fanchor');
+for (let i=1; i<=20; i++){
+    let para=document.createElement('p');
+    para.textContent=("This is paragraph number "+i);
+    mydiv.appendChild(para);   //this is repaint the items
+}
+document.body.appendChild(mydiv);
 
-anchorElement.addEventListener('click',function(event){
-    event.preventDefault();  //to prevent default behaviour
-    anchorElement.textContent="You clicked me!";
+const t4=performance.now();
+console.log("Time taken to execute code 2: "+(t4-t3)+" milliseconds");  //this is
+
+//document fragment;;
+let fragment =document.createDocumentFragment();
+for (let i=1; i<=30; i++){
+    let para=document.createElement('p');
+    para.textContent=("This is paragraph number "+i);
+    fragment.appendChild(para);
+}
+document.body.appendChild(fragment);
+
+let firstPromise=new Promise((resolve,reject)=>{
+    
 });
-
-let paras=document.querySelectorAll('p');  //accessing multiple elements
-for (let i=0; i<4; i++){
-    let para=paras[i];
-    para.addEventListener('click',function(){
-        alert("You clicked paragraph: "+(i+1));
-    })
-}
-
-
-
-
