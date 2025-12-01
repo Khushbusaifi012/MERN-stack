@@ -511,40 +511,70 @@ console.log(dest);
 // }
 
 //code 1\
-const t1=performance.now();
+// const t1=performance.now();
 
-for (let i=1; i<=20; i++){
-    let para=document.createElement('p');
-    para.textContent=("This is paragraph number "+i + "abc") ;
-    document.body.appendChild(para);
-}
-const t2=performance.now();
-console.log("Time taken to execute code 1: "+(t2-t1)+" milliseconds");    // this is reflow the items
-
+// for (let i=1; i<=20; i++){
+//     let para=document.createElement('p');
+//     para.textContent=("This is paragraph number "+i + "abc") ;
+//     document.body.appendChild(para);
+// }
+// const t2=performance.now();
+// console.log("Time taken to execute code 1: "+(t2-t1)+" milliseconds");    // this is reflow the items
 
 //code 2
-const t3=performance.now();
-let mydiv=document.getElementById('wrapper');
+// const t3=performance.now();
+// let mydiv=document.getElementById('wrapper');
 
-for (let i=1; i<=20; i++){
-    let para=document.createElement('p');
-    para.textContent=("This is paragraph number "+i);
-    mydiv.appendChild(para);   //this is repaint the items
-}
-document.body.appendChild(mydiv);
+// for (let i=1; i<=20; i++){
+//     let para=document.createElement('p');
+//     para.textContent=("This is paragraph number "+i);
+//     mydiv.appendChild(para);   //this is repaint the items
+// }
+// document.body.appendChild(mydiv);
 
-const t4=performance.now();
-console.log("Time taken to execute code 2: "+(t4-t3)+" milliseconds");  //this is
+// const t4=performance.now();
+// console.log("Time taken to execute code 2: "+(t4-t3)+" milliseconds");  //this is
 
 //document fragment;;
-let fragment =document.createDocumentFragment();
-for (let i=1; i<=30; i++){
-    let para=document.createElement('p');
-    para.textContent=("This is paragraph number "+i);
-    fragment.appendChild(para);
-}
-document.body.appendChild(fragment);
+// let fragment =document.createDocumentFragment();
+// for (let i=1; i<=30; i++){
+//     let para=document.createElement('p');
+//     para.textContent=("This is paragraph number "+i);
+//     fragment.appendChild(para);
+// }
+// document.body.appendChild(fragment);
 
 let firstPromise=new Promise((resolve,reject)=>{
-    
+    console.log("Promise");
+    reject("Promise reject successfully");
+    resolve("Promise resolved successfully");
+});
+
+function sayMyName(){
+    console.log("My name is khushbu");
+}
+setTimeout(sayMyName,3000);  //after 3 seconds it will print the name
+
+let firstpromise=new Promise((resolve,reject)=>{
+    setTimeout(function sayMyName(){
+        console.log("My name is khushbu");
+    },6000);    //after 6 seconds it will print the name
+    resolve(1);
+});
+
+let promise1=new Promise((resolve,reject)=>{
+    let sucess=false;
+    if(sucess){
+        resolve("Promise resolved successfully");
+    }
+    else{
+        reject("Promise rejected successfully");
+    }
+});
+promise1.then((message)=>{
+    console.log(message);
+}).catch((error)=>{
+    console.log(error);
+}).finally(()=>{
+    console.log("Promise is settled");   //this will execute regardless of the promise outcome
 });
