@@ -544,37 +544,59 @@ console.log(dest);
 // }
 // document.body.appendChild(fragment);
 
-let firstPromise=new Promise((resolve,reject)=>{
-    console.log("Promise");
-    reject("Promise reject successfully");
-    resolve("Promise resolved successfully");
-});
+// let firstPromise=new Promise((resolve,reject)=>{
+//     console.log("Promise");
+//     reject("Promise reject successfully");
+//     resolve("Promise resolved successfully");
+// });
 
-function sayMyName(){
-    console.log("My name is khushbu");
+// function sayMyName(){
+//     console.log("My name is khushbu");
+// }
+// setTimeout(sayMyName,3000);  //after 3 seconds it will print the name
+
+// let firstpromise=new Promise((resolve,reject)=>{
+//     setTimeout(function sayMyName(){
+//         console.log("My name is khushbu");
+//     },6000);    //after 6 seconds it will print the name
+//     resolve(1);
+// });
+
+// let promise1=new Promise((resolve,reject)=>{
+//     let sucess=false;
+//     if(sucess){
+//         resolve("Promise resolved successfully");
+//     }
+//     else{
+//         reject("Promise rejected successfully");
+//     }
+// });
+// promise1.then((message)=>{
+//     console.log(message);
+// }).catch((error)=>{
+//     console.log(error);
+// }).finally(()=>{
+//     console.log("Promise is settled");   //this will execute regardless of the promise outcome
+// });
+
+async function getdata(){
+    setTimeout(function(){
+        console.log("Data received");
+},2000);
+};
+getdata();
+
+async function getdata1(){
+     let response = await fetch('https://jsonplaceholder.typicode.com/todos/1');
+     let data=await response.json();
+     console.log("The data is : ",data);
 }
-setTimeout(sayMyName,3000);  //after 3 seconds it will print the name
+getdata1();
 
-let firstpromise=new Promise((resolve,reject)=>{
-    setTimeout(function sayMyName(){
-        console.log("My name is khushbu");
-    },6000);    //after 6 seconds it will print the name
-    resolve(1);
-});
+async function getdata(){
+     let response = await fetch('https://jsonplaceholder.typicode.com/posts/1/comments');
+     let data=await response.json();
+     console.log("The data is : ",data);
+}
+getdata();
 
-let promise1=new Promise((resolve,reject)=>{
-    let sucess=false;
-    if(sucess){
-        resolve("Promise resolved successfully");
-    }
-    else{
-        reject("Promise rejected successfully");
-    }
-});
-promise1.then((message)=>{
-    console.log(message);
-}).catch((error)=>{
-    console.log(error);
-}).finally(()=>{
-    console.log("Promise is settled");   //this will execute regardless of the promise outcome
-});
