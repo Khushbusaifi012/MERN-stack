@@ -579,24 +579,33 @@ console.log(dest);
 //     console.log("Promise is settled");   //this will execute regardless of the promise outcome
 // });
 
-async function getdata(){
-    setTimeout(function(){
-        console.log("Data received");
-},2000);
-};
-getdata();
+// async function getdata(){
+//     setTimeout(function(){
+//         console.log("Data received");
+// },2000);
+// };
+// getdata();
 
-async function getdata1(){
-     let response = await fetch('https://jsonplaceholder.typicode.com/todos/1');
-     let data=await response.json();
-     console.log("The data is : ",data);
+// async function getdata1(){
+//      let response = await fetch('https://jsonplaceholder.typicode.com/todos/1');
+//      let data=await response.json();
+//      console.log("The data is : ",data);
+// }
+// getdata1();
+
+// async function getdata(){
+//      let response = await fetch('https://jsonplaceholder.typicode.com/posts/1/comments');
+//      let data=await response.json();
+//      console.log("The data is : ",data);
+// }
+// getdata();
+
+function outerFunction(){    //block scope
+    let name="Khushbu";
+    function innerFunction(){
+        // let name="Python";   //inner function scope
+        console.log(name)
+    }
+    innerFunction();
 }
-getdata1();
-
-async function getdata(){
-     let response = await fetch('https://jsonplaceholder.typicode.com/posts/1/comments');
-     let data=await response.json();
-     console.log("The data is : ",data);
-}
-getdata();
-
+outerFunction();
