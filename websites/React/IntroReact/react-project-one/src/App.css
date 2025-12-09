@@ -7,3 +7,9 @@
   background-color: rgb(55, 55, 67);
   min-height: 10vh;
 }
+
+.button{
+  text-align: center;
+  text-decoration-color: black;
+}
+

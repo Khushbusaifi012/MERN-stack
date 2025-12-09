@@ -4,12 +4,18 @@ import './App.css'
 import UserCard from './components/UserCard'      
 import Counter from './components/Counter'
 import Card from './components/Card'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Logutbutton from './components/Logutbutton'
 import Loginbutton from './components/Loginbutton'
+import TimerComponent from './components/TimerComponent'
 
 function App() {
   const[isLoggedIn,setLoggedIn]=useState(false);   //set according to buttons
+
+  useEffect(() =>{
+    alert("I will run on each render")
+
+})
 
   // if(isLoggedIn){
   //   return(
@@ -45,9 +51,13 @@ function App() {
       <Card/>
     </div>
 
-    <div>  
+    <div className='button'>  
       {isLoggedIn ? <Logutbutton/> : <Loginbutton/>} 
     </div>
+
+{/* <div>
+    <TimerComponent/>
+    </div> */}
     </>
   )
 }
