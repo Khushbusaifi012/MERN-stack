@@ -5,6 +5,7 @@ import App from './App.jsx'
 import Navbar from './components/Navbar.jsx'
 import LoggerComponent from './components/LoggerComponent.jsx'
 import TimerComponent from './components/TimerComponent.jsx'
+import UserNameForm from './components/UserNameForm.jsx'
 
 
 createRoot(document.getElementById('root')).render(
@@ -12,5 +13,6 @@ createRoot(document.getElementById('root')).render(
     <App />
     <LoggerComponent/>
     {/* <TimerComponent/> */}
+    <UserNameForm/>
   </StrictMode>,
 )
