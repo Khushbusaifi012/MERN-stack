@@ -8,8 +8,20 @@ import { useEffect, useState } from 'react'
 import Logutbutton from './components/Logutbutton'
 import Loginbutton from './components/Loginbutton'
 import TimerComponent from './components/TimerComponent'
+import { useForm } from "react-hook-form"
+
+ async function onsubmit(data){
+  await new Promise((resolve) =>setTimeout(resolve,5000));
+  console.log("Submitting the form",data)
+}
 
 function App() {
+   const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors , isSubmitting },
+  } = useForm();
   const[isLoggedIn,setLoggedIn]=useState(false);   //set according to buttons
 
   useEffect(() =>{
@@ -54,6 +66,30 @@ function App() {
     <div className='button'>  
       {isLoggedIn ? <Logutbutton/> : <Loginbutton/>} 
     </div>
+
+    <form onSubmit={handleSubmit(onsubmit)}>
+      <div>
+        <label>First name:</label>
+        <input {...register("firstname"),{required: true,minLength:3}}/>
+        </div>
+        <br/>
+
+        <div>
+        <label>Middle name:</label>
+        <input {...register("middlename")}/>
+        </div>
+        <br/>
+
+
+        <div>
+        <label>Last name:</label>
+        <input {...register("lastname")}/>
+        </div>
+        <br/>
+
+        <input type='submit' disabled={isSubmitting} value={isSubmitting ? "Submitting" : "Submit"}/>
+
+    </form>
 
 {/* <div>
     <TimerComponent/>
